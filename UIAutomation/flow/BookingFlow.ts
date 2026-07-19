@@ -141,23 +141,11 @@ export class BookingFlow {
     input.flightLabel
   );
 
-  await this.selectSeatAndContinue(
-    input.seatDescription
-  );
-
-
+  await this.selectSeatAndContinue(input.seatDescription);
   const start = Date.now();
-
-  await this.fillPassengerDetails(
-    input.passenger,
-    input.passengerSeatLabel
-  );
-
-  // Wait until Checkout page is displayed
+  await this.fillPassengerDetails(input.passenger,input.passengerSeatLabel);
   await this.checkout.verifyLoaded();
-
   const end = Date.now();
-
   return end - start;
 }
 }

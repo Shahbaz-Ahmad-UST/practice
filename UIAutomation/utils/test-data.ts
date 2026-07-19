@@ -9,9 +9,9 @@ export const onwardTrip = {
 
   flightLabel: "IndiGo 6E-484",
 
-  seatDescription: "Seat 2A, window, available",
+  seatDescription: "Seat 10F, window, available",
 
-  passengerSeatLabel: "2A",
+  passengerSeatLabel: "10F",
 
   couponLabel: "FLAT ₹100 OFF · use TRIP100",
 
@@ -37,9 +37,9 @@ export const returnTrip = {
 
   flightLabel: "IndiGo 6E-484-R",
 
-  seatDescription: "Seat 3A, window, available",
+  seatDescription: "Seat 7F, window, available",
 
-  passengerSeatLabel: "3A",
+  passengerSeatLabel: "7F",
 
   couponLabel: "FLAT ₹100 OFF · use TRIP100",
 
