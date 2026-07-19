@@ -79,17 +79,12 @@ export class BookingFlow {
 
   /** Step 3: pick a seat and continue. */
   async selectSeatAndContinue(seatDescription: string) {
-    this.log.info("Step: Select seat");
+    this.log.info("Step: Select seat ",seatDescription);
+
     await this.seat.selectSeat(seatDescription);
     await this.seat.continueToPassengerDetails();
   }
 
-  async reLoginIfRedirected(email: string, password: string, expectedUrlFragment = "/login") {
-    if (this.page.url().includes(expectedUrlFragment)) {
-      this.log.info("Session redirect detected - re-authenticating");
-      await this.home.login(email, password);
-    }
-  }
 
  async fillPassengerDetails(
   passenger: Omit<PassengerDetails, "seatLabel">,
@@ -129,9 +124,6 @@ export class BookingFlow {
     await this.searchAndBookFlight(input.search, input.flightLabel);
     await this.selectSeatAndContinue(input.seatDescription);
 
-    // Original script hits a direct URL that forces a re-login mid-flow.
-    await this.reLoginIfRedirected(input.credentials.email, input.credentials.password);
-
     await this.fillPassengerDetails(
     input.passenger,
     input.passengerSeatLabel
@@ -153,10 +145,6 @@ export class BookingFlow {
     input.seatDescription
   );
 
-  await this.reLoginIfRedirected(
-    input.credentials.email,
-    input.credentials.password
-  );
 
   const start = Date.now();
 
