@@ -1,0 +1,27 @@
+1. [20:04:16] Test Started
+2. [20:04:16] ========== Search Bus Flow Started ==========
+3. [20:04:16] Opening Home Page
+4. [20:04:16] Navigating to: /
+5. [20:04:18] Verifying Home Page
+6. [20:04:18] Verifying element is visible
+7. [20:04:18] Verifying element is visible
+8. [20:04:18] Verifying element is visible
+9. [20:04:18] Selecting source city: Trivandrum
+10. [20:04:18] Clicking element
+11. [20:04:18] Entering text: Trivandrum
+12. [20:04:18] Pressing key: Enter
+13. [20:04:18] Selecting source suggestion: Trivandrum
+14. [20:04:18] Clicking element
+15. [20:04:20] Selecting destination city: Kochi
+16. [20:04:20] Entering text: Kochi
+17. [20:04:20] Selecting destination suggestion: Kochi
+18. [20:04:20] Clicking element
+19. [20:04:21] Capturing Home Page screenshot
+20. [20:04:21] Capturing screenshot: Home Page
+21. [20:04:22] Selecting journey date: Friday, July 17, 2026
+22. [20:04:22] Clicking element
+23. [20:04:22] Clicking element
+24. [20:04:22] Clicking Search Buses
+25. [20:04:22] Clicking element
+26. [20:04:22] ========== Search Bus Flow Completed ==========
+27. [20:04:22] Test passed

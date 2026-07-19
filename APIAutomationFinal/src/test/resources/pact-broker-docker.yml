@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  pact-broker:
+    image: pactfoundation/pact-broker:latest
+    container_name: pact-broker
+    ports:
+      - "9292:9292"
+    environment:
+      PACT_BROKER_DATABASE_ADAPTER: sqlite
+      PACT_BROKER_DATABASE_FILENAME: /tmp/pact-broker-db.sqlite3
+      PACT_BROKER_BASE_URL: http://localhost:9292
+      PACT_BROKER_LOG_LEVEL: info
+      PACT_BROKER_BASIC_AUTH_USERNAME: pactuser
+      PACT_BROKER_BASIC_AUTH_PASSWORD: pactpass
+    volumes:
+      - pact-broker-data:/tmp
+    restart: unless-stopped
+
+volumes:
+  pact-broker-data:

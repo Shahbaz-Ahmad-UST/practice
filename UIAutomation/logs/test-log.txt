@@ -1,0 +1,4 @@
+1. [15:22:15] Test Started
+2. [15:22:15] redbus home page
+3. [15:22:16] click enter info
+4. [15:22:20] Test passed

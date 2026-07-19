@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string" },
+    "pnr": { "type": "string", "pattern": "^TS-\\d+-\\d+$" },
+    "empId": { "type": "string" },
+    "journeyType": { "type": "string" },
+    "inventoryId": { "type": "string" },
+    "state": { "type": "string", "enum": ["HELD", "CONFIRMED", "CANCELLED"] },
+    "seatIds": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "amountPaise": { "type": "integer", "minimum": 0 },
+    "refundable": { "type": "boolean" },
+    "holdExpiresAt": { "type": ["string", "null"] }
+  },
+  "required": ["id", "pnr", "state", "amountPaise"]
+}

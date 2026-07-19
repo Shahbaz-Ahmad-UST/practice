@@ -1,0 +1,15 @@
+1. [08:02:15] Test Started
+2. [08:02:15] Step: Book Ticket
+3. [08:02:15] Navigating to https://tripstack.doomple.com/
+4. [08:02:16] Screenshot captured: home-page-loaded
+5. [08:02:17] Filling: Email field = "chetan@tripstack.test"
+6. [08:02:17] Filling: Password field = "************"
+7. [08:02:17] Screenshot captured: login-form-filled
+8. [08:02:30] Filling: From combobox = "BLR"
+9. [08:02:30] Filling: To combobox = "CCU"
+10. [08:02:30] Filling: Travel date = "2026-07-28"
+11. [08:02:31] Screenshot captured: flight-search-criteria
+12. [08:02:31] Screenshot captured: flight-search-results
+13. [08:02:32] Screenshot captured: seat-not-available
+14. [08:02:32] Step: Verify Seat Unavailable
+15. [08:02:37] Test failed
