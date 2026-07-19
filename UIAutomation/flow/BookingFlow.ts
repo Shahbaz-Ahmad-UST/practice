@@ -140,8 +140,9 @@ export class BookingFlow {
     input.search,
     input.flightLabel
   );
-
+ this.log.info(input.passengerSeatLabel);
   await this.selectSeatAndContinue(input.seatDescription);
+ 
   const start = Date.now();
   await this.fillPassengerDetails(input.passenger,input.passengerSeatLabel);
   await this.checkout.verifyLoaded();
