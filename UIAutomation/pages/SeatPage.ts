@@ -16,6 +16,9 @@ export class SeatPage extends BasePage {
   }
 
   async continueToPassengerDetails() {
+    await expect(this.continueButton).toBeEnabled({
+  timeout: 30000,
+});
     await this.click(this.continueButton, "Continue to passenger details button");
   }
 

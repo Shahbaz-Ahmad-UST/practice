@@ -1,24 +1,24 @@
-1. [20:53:15] Test Started
-2. [20:53:15] Step: Login
-3. [20:53:15] Navigating to https://tripstack.doomple.com/
-4. [20:53:16] Screenshot captured: home-page-loaded
-5. [20:53:16] Filling: Email field = "chetan@tripstack.test"
-6. [20:53:16] Filling: Password field = "************"
-7. [20:53:17] Screenshot captured: login-form-filled
-8. [20:53:17] Step: Search and book flight
-9. [20:53:17] Filling: From combobox = "CCU"
-10. [20:53:18] Filling: To combobox = "BLR"
-11. [20:53:18] Filling: Travel date = "2026-07-29"
-12. [20:53:18] Screenshot captured: flight-search-criteria
-13. [20:53:18] Screenshot captured: flight-search-results
-14. [20:53:18] Step: Select seat
-15. [20:53:19] Screenshot captured: seat-selected
-16. [20:53:19] Step: Fill passenger details
-17. [20:53:19] Filling: First name (seat 22F) = "Chetan"
-18. [20:53:19] Filling: Last name (seat 22F) = "Test"
-19. [20:53:19] Filling: Age (seat 22F) = "23"
-20. [20:53:19] Selecting: Gender (seat 22F) = "male"
-21. [20:53:19] Filling: Contact email = "chetan@tripstack.test"
-22. [20:53:19] Filling: Contact phone number = "987654321"
-23. [20:53:20] Screenshot captured: passenger-details-filled
-24. [20:53:20] Test passed
+1. [17:49:18] Test Started
+2. [17:49:18] Step: Login
+3. [17:49:18] Navigating to https://tripstack.doomple.com/
+4. [17:49:20] Screenshot captured: home-page-loaded
+5. [17:49:20] Filling: Email field = "chetan@tripstack.test"
+6. [17:49:20] Filling: Password field = "************"
+7. [17:49:20] Screenshot captured: login-form-filled
+8. [17:49:21] Step: Search and book flight
+9. [17:49:21] Filling: From combobox = "CCU"
+10. [17:49:22] Filling: To combobox = "BLR"
+11. [17:49:22] Filling: Travel date = "2026-07-29"
+12. [17:49:22] Screenshot captured: flight-search-criteria
+13. [17:49:22] Screenshot captured: flight-search-results
+14. [17:49:23] Step: Select seat
+15. [17:49:23] Screenshot captured: seat-selected
+16. [17:49:23] Step: Fill passenger details
+17. [17:49:23] Filling: First name (seat 22F) = "Chetan"
+18. [17:49:23] Filling: Last name (seat 22F) = "Test"
+19. [17:49:23] Filling: Age (seat 22F) = "23"
+20. [17:49:23] Selecting: Gender (seat 22F) = "male"
+21. [17:49:23] Filling: Contact email = "chetan@tripstack.test"
+22. [17:49:23] Filling: Contact phone number = "987654321"
+23. [17:49:24] Screenshot captured: passenger-details-filled
+24. [17:49:24] Test passed

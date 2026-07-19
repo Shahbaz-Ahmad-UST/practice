@@ -12,7 +12,7 @@ jobs:
   ui-tests:
     name: UI Automation Tests
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 1
 
     defaults:
       run:
@@ -39,18 +39,18 @@ jobs:
         env:
           CI: true
           BASEURL: https://tripstack.doomple.com/
-          CUSTOMER_EMAIL: chetan@tripstack.test
-          CUSTOMER_PASSWORD: Password@123
-          PASSENGER_FIRST_NAME: ${{ vars.PASSENGER_FIRST_NAME || 'Test' }}
-          PASSENGER_LAST_NAME: ${{ vars.PASSENGER_LAST_NAME || 'User' }}
-          PASSENGER_AGE: ${{ vars.PASSENGER_AGE || '30' }}
-          PASSENGER_GENDER: ${{ vars.PASSENGER_GENDER || 'male' }}
-          PASSENGER_EMAIL: ${{ secrets.SHAHBAZ_PASSENGER_EMAIL || 'test@example.com' }}
-          PASSENGER_PHONE: ${{ secrets.SHAHBAZ_PASSENGER_PHONE || '1234567890' }}
-          CARD_NAME_ON_CARD: ${{ secrets.SHAHBAZ_CARD_NAME_ON_CARD || 'Test User' }}
-          CARD_NUMBER: ${{ secrets.SHAHBAZ_CARD_NUMBER || '4111111111111111' }}
-          CARD_EXPIRY: ${{ secrets.SHAHBAZ_CARD_EXPIRY || '12/30' }}
-          CARD_CVV: ${{ secrets.SHAHBAZ_CARD_CVV || '123' }}
+          CUSTOMER_EMAIL: 'chetan@tripstack.test'
+          CUSTOMER_PASSWORD: 'Password@123'
+          PASSENGER_FIRST_NAME: 'Shah'
+          PASSENGER_LAST_NAME: 'Ahmad'
+          PASSENGER_AGE: 20
+          PASSENGER_GENDER: Male
+          PASSENGER_EMAIL: chetan@tripstack.test
+          PASSENGER_PHONE: '1234567890'
+          CARD_NAME_ON_CARD: 'Shah'
+          CARD_NUMBER: '1234567891234567'
+          CARD_EXPIRY: '11/11'
+          CARD_CVV: '123'
         run: npx playwright test
 
       - name: Upload Playwright HTML Report
