@@ -1,10 +1,10 @@
-1. [18:26:08] Test Started
-2. [18:26:08] Step: Invalid Login
-3. [18:26:08] Navigating to https://tripstack.doomple.com/
-4. [18:26:12] Screenshot captured: home-page-loaded
-5. [18:26:12] Filling: Email field = "chetan@tripstack.test"
-6. [18:26:12] Filling: Password field = "************"
-7. [18:26:12] Screenshot captured: login-form-filled
-8. [18:26:13] Screenshot captured: invalid-login
-9. [18:26:13] Screenshot captured: invalid-login
-10. [18:26:13] Test passed
+1. [09:20:09] Test Started
+2. [09:20:09] Step: Invalid Login
+3. [09:20:09] Navigating to https://tripstack.doomple.com/
+4. [09:20:10] Screenshot captured: home-page-loaded
+5. [09:20:10] Filling: Email field = "chetan@tripstack.test"
+6. [09:20:10] Filling: Password field = "************"
+7. [09:20:10] Screenshot captured: login-form-filled
+8. [09:20:11] Screenshot captured: invalid-login
+9. [09:20:11] Screenshot captured: invalid-login
+10. [09:20:11] Test passed
