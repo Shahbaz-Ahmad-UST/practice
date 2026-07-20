@@ -1,33 +1,33 @@
-1. [09:20:09] Test Started
-2. [09:20:09] Step: Login
-3. [09:20:09] Navigating to https://tripstack.doomple.com/
-4. [09:20:10] Screenshot captured: home-page-loaded
-5. [09:20:10] Filling: Email field = "chetan@tripstack.test"
-6. [09:20:10] Filling: Password field = "************"
-7. [09:20:10] Screenshot captured: login-form-filled
-8. [09:20:11] Step: Search and book flight
-9. [09:20:11] Filling: From combobox = "BLR"
-10. [09:20:11] Filling: To combobox = "CCU"
-11. [09:20:11] Filling: Travel date = "2026-07-28"
-12. [09:20:12] Screenshot captured: flight-search-criteria
-13. [09:20:12] Screenshot captured: flight-search-results
-14. [09:20:12] Step: Select seat 
-15. [09:20:13] Screenshot captured: seat-selected
-16. [09:20:13] Step: Fill passenger details
-17. [09:20:13] Filling: First name (seat 10F) = "Chetan"
-18. [09:20:13] Filling: Last name (seat 10F) = "Test"
-19. [09:20:13] Filling: Age (seat 10F) = "23"
-20. [09:20:13] Selecting: Gender (seat 10F) = "male"
-21. [09:20:13] Filling: Contact email = "chetan@tripstack.test"
-22. [09:20:13] Filling: Contact phone number = "987654321"
-23. [09:20:13] Screenshot captured: passenger-details-filled
-24. [09:20:14] Step: Checkout and payment
-25. [09:20:14] Filling: Name on card = "Chetan"
-26. [09:20:14] Filling: Card number = "****************"
-27. [09:20:14] Filling: Expiry = "11/11"
-28. [09:20:14] Filling: CVV = "***"
-29. [09:20:14] Screenshot captured: checkout-payment-filled
-30. [09:20:15] Step: Verify confirmation
-31. [09:20:15] Evidence recorded: bookingReference = "TS-1029-0001"
-32. [09:20:15] Screenshot captured: booking-confirmation
-33. [09:20:15] Test passed
+1. [09:26:03] Test Started
+2. [09:26:03] Step: Login
+3. [09:26:03] Navigating to https://tripstack.doomple.com/
+4. [09:26:04] Screenshot captured: home-page-loaded
+5. [09:26:05] Filling: Email field = "chetan@tripstack.test"
+6. [09:26:05] Filling: Password field = "************"
+7. [09:26:05] Screenshot captured: login-form-filled
+8. [09:26:05] Step: Search and book flight
+9. [09:26:05] Filling: From combobox = "BLR"
+10. [09:26:05] Filling: To combobox = "CCU"
+11. [09:26:06] Filling: Travel date = "2026-07-28"
+12. [09:26:06] Screenshot captured: flight-search-criteria
+13. [09:26:06] Screenshot captured: flight-search-results
+14. [09:26:06] Step: Select seat 
+15. [09:26:07] Screenshot captured: seat-selected
+16. [09:26:07] Step: Fill passenger details
+17. [09:26:07] Filling: First name (seat 10F) = "Chetan"
+18. [09:26:07] Filling: Last name (seat 10F) = "Test"
+19. [09:26:07] Filling: Age (seat 10F) = "23"
+20. [09:26:07] Selecting: Gender (seat 10F) = "male"
+21. [09:26:07] Filling: Contact email = "chetan@tripstack.test"
+22. [09:26:07] Filling: Contact phone number = "987654321"
+23. [09:26:07] Screenshot captured: passenger-details-filled
+24. [09:26:08] Step: Checkout and payment
+25. [09:26:08] Filling: Name on card = "Chetan"
+26. [09:26:08] Filling: Card number = "****************"
+27. [09:26:08] Filling: Expiry = "11/11"
+28. [09:26:08] Filling: CVV = "***"
+29. [09:26:08] Screenshot captured: checkout-payment-filled
+30. [09:26:08] Step: Verify confirmation
+31. [09:26:08] Evidence recorded: bookingReference = "TS-1029-0002"
+32. [09:26:08] Screenshot captured: booking-confirmation
+33. [09:26:09] Test passed
