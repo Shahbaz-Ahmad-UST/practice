@@ -35,13 +35,15 @@ export class CartPage extends BasePage {
     await this.expectVisible(this.shipping);
     await this.expectVisible(this.total);
 
-    const productActualPrice = parseFloat((await this.productPrice.innerText()).replace(/[^0-9.-]+/g, ''));
+    const productActualPrice = parseFloat((await this.subTotal.innerText()).replace(/[^0-9.]+/g, ''));
     const displayedTaxText = await this.tax.innerText();
-    const displayedTax = parseFloat(displayedTaxText.replace(/[^0-9.-]+/g, ''));
     const calculatedTax = (productActualPrice * 8.5) / 100;
     const expectedTaxText = `$${calculatedTax.toFixed(2)}`;
+    const shippingCharge = parseFloat((await this.shipping.innerText()).replace(/[^0-9.]+/g, ''));
+    const totalPrice = (productActualPrice+calculatedTax+shippingCharge).toFixed(2);
 
     await expect(this.tax).toHaveText(expectedTaxText);
+    await expect(this.total).toHaveText(`$`+totalPrice.toString());
   }
 
   async checkoutButtonClick()
