@@ -67,6 +67,7 @@ jobs:
           path: UIAutomationFinalAssessment/test-results/
           if-no-files-found: warn
 
+
   api-tests:
     name: API Automation Tests (Maven)
     runs-on: ubuntu-latest
@@ -102,9 +103,11 @@ jobs:
           EOF
 
       - name: Run API Tests
-        run: |
-          mvn -B clean test
-          mvn allure:serve
+        run: mvn -B clean test
+
+      - name: Generate Allure Report
+        if: always()
+        run: mvn allure:report
 
       - name: Upload API Test Reports
         if: always()
@@ -114,10 +117,18 @@ jobs:
           path: ApiAutomationFinalAssessment/target/surefire-reports/
           if-no-files-found: warn
 
-      - name: Upload API Allure Reports
+      - name: Upload API Allure Results
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: api-allure-reports
+          name: api-allure-results
           path: ApiAutomationFinalAssessment/target/allure-results/
+          if-no-files-found: warn
+
+      - name: Upload Allure HTML Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: api-allure-report
+          path: ApiAutomationFinalAssessment/target/site/allure-maven-plugin/
           if-no-files-found: warn
