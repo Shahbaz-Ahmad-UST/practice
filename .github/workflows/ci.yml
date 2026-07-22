@@ -102,7 +102,9 @@ jobs:
           EOF
 
       - name: Run API Tests
-        run: mvn -B clean test
+        run: |
+          mvn -B clean test
+          mvn allure:serve
 
       - name: Upload API Test Reports
         if: always()
@@ -110,4 +112,12 @@ jobs:
         with:
           name: api-test-reports
           path: ApiAutomationFinalAssessment/target/surefire-reports/
+          if-no-files-found: warn
+
+      - name: Upload API Allure Reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: api-allure-reports
+          path: ApiAutomationFinalAssessment/target/allure-results/
           if-no-files-found: warn
