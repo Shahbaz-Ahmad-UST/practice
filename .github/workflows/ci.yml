@@ -1,0 +1,113 @@
+name: CI for UI and API Automation
+
+on:
+  push:
+    branches:
+      - capstone/307424-shahbaz-ahmad
+
+  pull_request:
+    branches:
+      - capstone/307424-shahbaz-ahmad
+
+jobs:
+
+  ui-tests:
+    name: UI Automation Tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    defaults:
+      run:
+        working-directory: UIAutomationFinalAssessment
+
+    steps:
+
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: UIAutomationFinalAssessment/package-lock.json
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Run Playwright Tests
+        env:
+          CI: true
+          BASEURL: ${{ secrets.Shahbaz_BASEURL }}
+          CUSTOMER_EMAIL: ${{ secrets.Shahbaz_CUSTOMER_EMAIL }}
+          CUSTOMER_NAME: ${{ secrets.Shahbaz_CUSTOMER_NAME }}
+          CUSTOMER_PHONE: ${{ secrets.Shahbaz_CUSTOMER_PHONE }}
+          CARD_NAME_ON_CARD: ${{ secrets.Shahbaz_CARD_NAME_ON_CARD }}
+          CARD_NUMBER: ${{ secrets.Shahbaz_CARD_NUMBER }}
+          CARD_EXPIRY: ${{ secrets.Shahbaz_CARD_EXPIRY }}
+          CARD_CVV: ${{ secrets.Shahbaz_CARD_CVV }}
+        run: npx playwright test
+
+      - name: Upload Playwright HTML Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: UIAutomationFinalAssessment/playwright-report/
+          if-no-files-found: warn
+
+      - name: Upload Playwright Test Results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-test-results
+          path: UIAutomationFinalAssessment/test-results/
+          if-no-files-found: warn
+
+  api-tests:
+    name: API Automation Tests (Maven)
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    needs: ui-tests
+
+    defaults:
+      run:
+        working-directory: ApiAutomationFinalAssessment
+
+    steps:
+
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 22
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '22'
+          cache: maven
+
+      - name: Create .env file
+        env:
+          SHAHBAZ_BASE_URL: ${{ secrets.SHAHBAZ_BASE_URL }}
+          SHAHBAZ_USER_NAME: ${{ secrets.SHAHBAZ_USER_NAME }}
+          SHAHBAZ_USER_PASSWORD: ${{ secrets.SHAHBAZ_USER_PASSWORD }}
+        run: |
+          cat > .env << EOF
+          BASE_URL=${SHAHBAZ_BASE_URL}
+          USER_NAME=${SHAHBAZ_USER_NAME}
+          USER_PASSWORD=${SHAHBAZ_USER_PASSWORD}
+          EOF
+
+      - name: Run API Tests
+        run: mvn -B clean test
+
+      - name: Upload API Test Reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: api-test-reports
+          path: ApiAutomationFinalAssessment/target/surefire-reports/
+          if-no-files-found: warn
