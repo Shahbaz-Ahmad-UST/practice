@@ -72,7 +72,7 @@ jobs:
     name: API Automation Tests (Maven)
     runs-on: ubuntu-latest
     timeout-minutes: 60
-    needs: ui-tests
+
 
     defaults:
       run:
