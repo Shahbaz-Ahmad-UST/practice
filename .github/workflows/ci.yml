@@ -21,7 +21,6 @@ jobs:
         working-directory: UIAutomationFinalAssessment
 
     steps:
-
       - name: Checkout Repository
         uses: actions/checkout@v4
 
@@ -51,35 +50,38 @@ jobs:
           CARD_CVV: ${{ secrets.Shahbaz_CARD_CVV }}
         run: npx playwright test
 
-      - name: Upload Playwright HTML Report
+      - name: Debug Playwright Files
+        if: always()
+        run: |
+          echo "===== PLAYWRIGHT REPORT ====="
+          find playwright-report -type f || true
+
+          echo "===== TEST RESULTS ====="
+          find test-results -type f || true
+
+          echo "===== SCREENSHOTS ====="
+          find . -name "*.png" || true
+
+      - name: Upload Playwright Artifacts
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: playwright-report
-          path: UIAutomationFinalAssessment/playwright-report/
+          name: playwright-artifacts
+          path: |
+            UIAutomationFinalAssessment/playwright-report/
+            UIAutomationFinalAssessment/test-results/
           if-no-files-found: warn
-
-      - name: Upload Playwright Test Results
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: playwright-test-results
-          path: UIAutomationFinalAssessment/test-results/
-          if-no-files-found: warn
-
 
   api-tests:
     name: API Automation Tests (Maven)
     runs-on: ubuntu-latest
     timeout-minutes: 60
 
-
     defaults:
       run:
         working-directory: ApiAutomationFinalAssessment
 
     steps:
-
       - name: Checkout Repository
         uses: actions/checkout@v4
 
