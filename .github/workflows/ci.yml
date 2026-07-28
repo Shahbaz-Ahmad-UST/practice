@@ -68,8 +68,8 @@ jobs:
         with:
           name: playwright-artifacts
           path: |
-            UIAutomationFinalAssessment/playwright-report/
-            UIAutomationFinalAssessment/test-results/
+            UIAutomationFinalAssessment/playwright-report
+            UIAutomationFinalAssessment/test-results
           if-no-files-found: warn
 
   api-tests:

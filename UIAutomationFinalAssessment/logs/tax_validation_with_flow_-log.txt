@@ -1,12 +1,12 @@
-1. [10:20:44] INFO Test Started
-2. [10:20:44] INFO Step: home page 
-3. [10:20:44] INFO Navigating to https://chess-agent-83252463.figma.site/
-4. [10:20:45] INFO Screenshot captured: home-page-loaded
-5. [10:20:45] INFO Step: cloth category 
-6. [10:20:46] INFO step: product page open
-7. [10:20:47] INFO Screenshot captured: product-page-loaded
-8. [10:20:47] INFO step: add to cart
-9. [10:20:47] INFO step: go to cart
-10. [10:20:47] INFO Screenshot captured: product-page-loaded
-11. [10:20:47] INFO step: tax validation in cart part
-12. [10:20:47] INFO Test passed
+1. [10:41:27] INFO Test Started
+2. [10:41:27] INFO Step: home page 
+3. [10:41:27] INFO Navigating to https://chess-agent-83252463.figma.site/
+4. [10:41:29] INFO Screenshot captured: home-page-loaded
+5. [10:41:29] INFO Step: cloth category 
+6. [10:41:29] INFO step: product page open
+7. [10:41:30] INFO Screenshot captured: product-page-loaded
+8. [10:41:30] INFO step: add to cart
+9. [10:41:30] INFO step: go to cart
+10. [10:41:30] INFO Screenshot captured: product-page-loaded
+11. [10:41:30] INFO step: tax validation in cart part
+12. [10:41:30] INFO Test passed
