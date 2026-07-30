@@ -1,4 +1,4 @@
-package com.ust.finalAssessment.api.client;
+package com.ust.finalAssessment.client;
 
 import io.restassured.response.Response;
 

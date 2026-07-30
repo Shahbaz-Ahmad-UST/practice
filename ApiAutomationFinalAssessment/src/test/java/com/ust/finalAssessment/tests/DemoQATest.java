@@ -1,6 +1,6 @@
 package com.ust.finalAssessment.tests;
-import com.ust.finalAssessment.api.client.AuthClient;
-import com.ust.finalAssessment.api.client.BookClient;
+import com.ust.finalAssessment.client.AuthClient;
+import com.ust.finalAssessment.client.BookClient;
 import com.ust.finalAssessment.model.Book;
 import com.ust.finalAssessment.report.ExtentTestListener;
 import io.qameta.allure.*;
